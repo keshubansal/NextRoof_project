@@ -1,7 +1,7 @@
 package rakshit;
 
 public class Listproperty {
-	String strphoneno,strname,strdesc, strpropertytype, strbedrooms, strpropsize, strprice, straddress, strstate, strcity,strzipcode,ammenities,filename;
+	String strphoneno,strname,strdesc, strpropertytype, strbedrooms, strpropsize, strprice, straddress, strstate, strcity,strzipcode,ammenities,filename,filename1;
      int propertyid;
 	public int getPropertyid() {
 		return propertyid;
@@ -13,7 +13,7 @@ public class Listproperty {
 
 	public Listproperty(int propertyid,String strname, String strdesc, String strpropertytype, String strbedrooms, String strpropsize,
 			String strprice, String straddress, String strstate, String strcity, String strzipcode, String ammenities,
-			String filename,String strphoneno) {
+			String filename,String strphoneno,String filename1) {
 		super();
 		this.propertyid=propertyid;
 		
@@ -30,7 +30,7 @@ public class Listproperty {
 		this.ammenities = ammenities;
 		this.filename = filename;
 		this.strphoneno=strphoneno;
-		
+		this.filename1=filename1;
 	}
     
 	
@@ -140,6 +140,13 @@ public class Listproperty {
 		this.strphoneno = strphoneno;
 	}
 	
+	public String getFilename1() {
+		return filename1;
+	}
+
+	public void setFilename1(String filename1) {
+		this.filename1 = filename1;
+	}
 	
 
 }

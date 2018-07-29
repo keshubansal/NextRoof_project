@@ -412,8 +412,8 @@ try{
 		 <%-- ${pageContext.request.contextPath}/images/BGFnl.jpg --%>
 	        <input type="hidden" value=${pageContext.request.contextPath} 
 	                          name="hdn"  required>
-	<!--  <input type="hidden" value=${pageContext.request.contextPath} 
-	                          name="hdn1"  required>-->
+	  <input type="hidden" value=${pageContext.request.contextPath} 
+	                          name="hdn1"  required>
 	
 	<!--C:\Users\RAKSHIT MITTAL\eclipse-workspace\demo\WebContent\images
 	 -->    

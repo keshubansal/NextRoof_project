@@ -53,7 +53,7 @@ public class property extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		 final String SAVE_DIR="images";
-		 //final String SAVE_DIR1="images";
+		 final String SAVE_DIR1="images1";
 		PrintWriter out=response.getWriter();
 		String strbtn=request.getParameter("btn");
 		if(strbtn!=null)
@@ -79,26 +79,26 @@ public class property extends HttpServlet {
 				session.setAttribute("city",strcity);
 				strzipcode=request.getParameter("zipcode");
 				String strContextPath=request.getParameter("hdn");
-				//String strContextPath1=request.getParameter("hdn1");
+				String strContextPath1=request.getParameter("hdn1");
 				 
 			        String savePath = getServletContext().getRealPath("/")+File.separator + SAVE_DIR;
-			        //String savePath1=getServletContext().getRealPath("/")+File.separator + SAVE_DIR1;
+			        String savePath1=getServletContext().getRealPath("/")+File.separator + SAVE_DIR1;
 			        File fileSaveDir=new File(savePath);
 	                if(!fileSaveDir.exists()){
 	                    fileSaveDir.mkdir();
 	                }
-//	                File fileSaveDir1=new File(savePath1);
-//	                if(!fileSaveDir1.exists()){
-//	                    fileSaveDir1.mkdir();
-//	                }
+	                File fileSaveDir1=new File(savePath1);
+	                if(!fileSaveDir1.exists()){
+	                    fileSaveDir1.mkdir();
+	                }
 	                Part part=request.getPart("file");
 		            String fileName=extractFileName(part);
 		            part.write(savePath + File.separator + fileName);
 		            
-//		            Part part1=request.getPart("file1");
-//		            String fileName1=extractFileName1(part1);
-//		            part.write(savePath1 + File.separator + fileName1);
-//		            
+		            Part part1=request.getPart("file1");
+		            String fileName1=extractFileName1(part1);
+		            part1.write(savePath1 + File.separator + fileName1);
+		            
 	            
 	            //You need this loop if you submitted more than one file
 	                //String fileName= ""; 
@@ -109,7 +109,7 @@ public class property extends HttpServlet {
 	       // }
 
 	                String filePath= savePath + File.separator + fileName;
-	               // String filePath1= savePath1 + File.separator + fileName1;
+	                String filePath1= savePath1 + File.separator + fileName1;
 
 				String[] amm = request.getParameterValues("checkbox");
 				
@@ -126,12 +126,12 @@ public class property extends HttpServlet {
 				//int intCatid=Integer.parseInt(strcatid);
 				
 				//int propertyid=Integer.parseInt(maxstrid);
-				objdh.addproperty(maxpropid,strname,strphoneno, strdesc, strpropertytype, strbedrooms, strpropsize, strprice, straddress, strstate, strcity, strzipcode, ammenities,fileName);
+				objdh.addproperty(maxpropid,strname, strdesc, strpropertytype, strbedrooms, strpropsize, strprice, straddress, strstate, strcity, strzipcode, ammenities,fileName,strphoneno,fileName1);
 				String s ="<HTML><HEAD><TITLE>MESSAGE</TITLE>"+
 						"<SCRIPT LANGUAGE=JavaScript>"+
 						 "alert('property added');"+
 						 "</SCRIPT>"+
-						   "</HEAD><body><br/> <a href='AddProperty.jsp'>Back- go to property page</a></body>"+
+						   "</HEAD><body><br/> <a href='OwnerPage.html'>Back- go to Owner page</a></body>"+
 						 
 						  "</HTML>";
 						 out.print(s);
@@ -155,15 +155,15 @@ public class property extends HttpServlet {
 	        return "";
 	    }
 
-//	 private String extractFileName1(Part part1) {
-//	        String contentDisp = part1.getHeader("content-disposition");
-//	        String[] items = contentDisp.split(";");
-//	        for (String s : items) {
-//	            if (s.trim().startsWith("filename")) {
-//	                return s.substring(s.indexOf("=") + 2, s.length()-1);
-//	            }
-//	        }
-//	        return "";
-//	    }
+	 private String extractFileName1(Part part1) {
+	        String contentDisp = part1.getHeader("content-disposition");
+	        String[] items = contentDisp.split(";");
+	        for (String s : items) {
+	            if (s.trim().startsWith("filename")) {
+	                return s.substring(s.indexOf("=") + 2, s.length()-1);
+	            }
+	        }
+	        return "";
+	    }
 
 }

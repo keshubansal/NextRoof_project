@@ -70,7 +70,7 @@
 
 						<nav class="main_nav">
 							<ul class="main_nav_list">
-								<li class="main_nav_item"><a href="TenantSearch.jsp">home</a></li>
+								<li class="main_nav_item"><a href="TenantPage.jsp">home</a></li>
 								<li class="main_nav_item"><a href="about.html">about us</a></li>
 								<li class="main_nav_item"><a href="contact.html">contact</a></li>
 							</ul>
@@ -172,6 +172,7 @@
 					String desc=request.getParameter("id7");
 					String bedrooms=request.getParameter("id8");
 					String phoneno=request.getParameter("id10");
+					String file1=request.getParameter("id11");
 					
 					session.setAttribute("address", location);
 					%>
@@ -212,7 +213,7 @@
 
 							<!-- Listing Slider Item -->
 							<div class="owl-item listing_slider_item">
-								<img src="images/listing_slider_1.jpg" alt="https://unsplash.com/@astute">
+								<img src="${pageContext.request.contextPath}/images1/<%=file1 %>" alt="https://unsplash.com/@astute">
 							</div>
 
 							<!-- Listing Slider Item -->

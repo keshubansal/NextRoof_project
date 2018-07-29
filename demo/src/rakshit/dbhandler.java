@@ -170,27 +170,29 @@ public class dbhandler {
 		
 	}
 
-	public void addproperty(int propertyid,String strname,String strdesc,String strpropertytype,String strbedrooms,String strpropsize,String strprice,String straddress,String strstate,String strcity,String strzipcode,String ammenities,String file,String phoneno)
+	public void addproperty(int propertyid,String strname,String strdesc,String strpropertytype,String strbedrooms,String strpropsize,String strprice,String straddress,String strstate,String strcity,String strzipcode,String ammenities,String file,String phoneno,String file1)
 	   {
 		   Connection con=getdbcon();
 		   System.out.println("inside func");
 		   try {
-			PreparedStatement stmt=con.prepareStatement("insert into addproperty values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			PreparedStatement stmt=con.prepareStatement("insert into addproperty values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			stmt.setInt(1, propertyid);
-			stmt.setString(2,strname );
-			stmt.setString(3,strdesc );
+			stmt.setString(2,strname);
+			stmt.setString(3,strdesc);
 			stmt.setString(4, strpropertytype);
 			stmt.setString(5, strbedrooms);
 			stmt.setString(6, strpropsize);
-			stmt.setString(7,strprice );
-			stmt.setString(8,straddress );
+			stmt.setString(7,strprice);
+			stmt.setString(8,straddress);
 			stmt.setString(9, strstate);
 			stmt.setString(10, strcity);
 			stmt.setString(11, strzipcode);
 			stmt.setString(12,ammenities );
 			stmt.setString(13, file);
 			stmt.setString(14,phoneno );
+			stmt.setString(15, file1);
 			stmt.executeUpdate();
+			System.out.println("desc:"+strdesc+" mobileno:"+phoneno);
 			con.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -241,8 +243,8 @@ public class dbhandler {
  			ammenities=rset.getString("ammenities");
  			filename=rset.getString("image");
  			strphoneno=rset.getString("Mobileno");
- 			//filename1=rset.getString("image1");
- 			Listproperty p1=new Listproperty(propertyid,strname,strdesc,strpropertytype,strbedrooms,strpropsize,strprice,straddress,strstate,strcity,strzipcode,ammenities,filename,strphoneno);
+ 			filename1=rset.getString("image1");
+ 			Listproperty p1=new Listproperty(propertyid,strname,strdesc,strpropertytype,strbedrooms,strpropsize,strprice,straddress,strstate,strcity,strzipcode,ammenities,filename,strphoneno,filename1);
  			//Emp e1=new Emp(strEmpno,strEname,strEage,strEadd,strEsal);
  			lst.add(p1);
  		}
@@ -287,9 +289,8 @@ public class dbhandler {
  			ammenities=rset.getString("ammenities");
  			filename=rset.getString("image");
  			strphoneno=rset.getString("Mobileno");
- 			//filename1=rset.getString("image1");
- 			Listproperty p1=new Listproperty(propertyid,strname,strdesc,strpropertytype,strbedrooms,strpropsize,strprice,straddress,strstate,strcity,strzipcode,ammenities,filename,strphoneno);
- 			//Emp e1=new Emp(strEmpno,strEname,strEage,strEadd,strEsal);
+ 			filename1=rset.getString("image1");
+ 			Listproperty p1=new Listproperty(propertyid,strname,strdesc,strpropertytype,strbedrooms,strpropsize,strprice,straddress,strstate,strcity,strzipcode,ammenities,filename,strphoneno,filename1);
  			lst.add(p1);
  		}
  		con.close();

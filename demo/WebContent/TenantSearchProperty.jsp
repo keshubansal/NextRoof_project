@@ -194,10 +194,10 @@
 					<div class="listing_item">
 						<div class="listing_item_inner d-flex flex-md-row flex-column trans_300">
 							<div class="listing_image_container">
-								<div class="listing_image">
-									<!-- Image by: https://unsplash.com/@breather -->
+							
+							<div class="listing_image">
 									<div class="listing_background" style="background-image:url('${pageContext.request.contextPath}/images/<%=p.getFilename() %>')"></div>
-								</div>
+								</div>								
 								<div class="featured_card_box d-flex flex-row align-items-center trans_300">
 									<img src="images/tag.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									<div class="featured_card_box_content">
@@ -208,7 +208,7 @@
 							</div>
 							<div class="listing_content">
 							
-								<div class="listing_title"><a href="ListingsSingle.jsp?id1=<%=p.getStraddress()+","+p.getStrcity()+","+p.getStrstate() %>&id2=<%=p.getStrprice() %>&id3=<%=p.getFilename() %>&id5=<%=p.getStrpropertytype()%>&id6=<%=p.getStrpropsize()%>&id7=<%=p.getStrdesc()%>&id8=<%=p.getStrbedrooms()%>&id9=<%=p.getStrzipcode()%>&id10=<%=p.getStrphoneno()%>">Owner Name: <%=p.getStrname() %></a></div>
+								<div class="listing_title"><a href="ListingsSingle.jsp?id1=<%=p.getStraddress()+","+p.getStrcity()+","+p.getStrstate() %>&id2=<%=p.getStrprice() %>&id3=<%=p.getFilename() %>&id5=<%=p.getStrpropertytype()%>&id6=<%=p.getStrpropsize()%>&id7=<%=p.getStrdesc()%>&id8=<%=p.getStrbedrooms()%>&id9=<%=p.getStrzipcode()%>&id10=<%=p.getStrphoneno()%>&id11=<%=p.getFilename1()%>">Owner Name: <%=p.getStrname() %></a></div>
 								<div class="listing_title">Location: <%=p.getStrcity()+" "+p.getStrstate() %></div>
 								<div class="listing_text">Contact Number: <%=p.getStrphoneno() %></div>
 								<div class="listing_text">Description: <%=p.getStrdesc() %></div>
